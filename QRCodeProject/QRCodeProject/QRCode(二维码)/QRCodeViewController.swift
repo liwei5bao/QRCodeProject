@@ -3,7 +3,7 @@
 //  KoucloiPhone
 //
 //  Created by kouclo on 16/4/28.
-//  Copyright © 2016年 kouclo. All rights reserved.
+//  Copyright © 2016年 李伟. All rights reserved.
 //
 
 import UIKit
