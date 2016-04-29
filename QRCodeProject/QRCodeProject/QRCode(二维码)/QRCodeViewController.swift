@@ -295,7 +295,7 @@ extension QRCodeViewController:UIImagePickerControllerDelegate,UINavigationContr
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         
         let type = (info as NSDictionary).objectForKey(UIImagePickerControllerMediaType) as! String
-        
+        session.stopRunning()
         if type == "public.image"
         {
             let image = (info as NSDictionary).objectForKey(UIImagePickerControllerOriginalImage) as! UIImage
@@ -303,8 +303,15 @@ extension QRCodeViewController:UIImagePickerControllerDelegate,UINavigationContr
             //识别二维码的方法
             let result = image.decodeQRImageWith(image)
             //跳转的方法
-            UIAlertView(title: "提示", message: "扫描结果为:\(result!)", delegate: self, cancelButtonTitle: "确定").show()
+            if result != nil{
             
+                UIAlertView(title: "提示", message: "扫描结果为:\(result!)", delegate: self, cancelButtonTitle: "确定").show()
+                
+            }else{
+            
+                UIAlertView(title: "提示", message: "不能识别的类型", delegate: self, cancelButtonTitle: "确定").show()
+            }
+        
         }
         
         self.dismissViewControllerAnimated(true) { () -> Void in}
