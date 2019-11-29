@@ -36,5 +36,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>NSCameraUsageDescription</key>
+    <string>需要您的同意才能使用照相机</string>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>需要您的同意才能获取多媒体资料</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>需要您的同意才能获取多媒体资料</string>
 </dict>
 </plist>

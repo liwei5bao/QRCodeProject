@@ -43,12 +43,11 @@
     //
     //        qrResult = feature.messageString;
     //    } else {
-    
     ZBarReaderController* read = [ZBarReaderController new];
     CGImageRef cgImageRef = aImage.CGImage;
     ZBarSymbol* symbol = nil;
     for(symbol in [read scanImage:cgImageRef]) break;
-    qrResult = symbol.data ;
+    qrResult = symbol.data;
     return qrResult;
 }
 

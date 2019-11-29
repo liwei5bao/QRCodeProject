@@ -1,4 +1,11 @@
-ZBARSDK_EXCLUDED_SOURCE_FILE_NAMES[sdk=iphoneos*][arch=*] = ZBarReaderViewImpl_Simulator.m
-ZBARSDK_EXCLUDED_SOURCE_FILE_NAMES[sdk=iphonesimulator*][arch=*] = ZBarReaderViewImpl_Capture.m ZBarCaptureReader.m
-ZBARSDK_GCC_PREPROCESSOR_DEFINITIONS = NDEBUG=1
-ZBARSDK_OTHER_LDFLAGS = -l"iconv" -framework "AVFoundation" -framework "CoreGraphics" -framework "CoreMedia" -framework "CoreVideo" -framework "QuartzCore"
+CONFIGURATION_BUILD_DIR = ${PODS_CONFIGURATION_BUILD_DIR}/ZBarSDK
+EXCLUDED_SOURCE_FILE_NAMES[sdk=iphoneos*][arch=*] = ZBarReaderViewImpl_Simulator.m
+EXCLUDED_SOURCE_FILE_NAMES[sdk=iphonesimulator*][arch=*] = ZBarReaderViewImpl_Capture.m ZBarCaptureReader.m
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1 NDEBUG=1
+OTHER_LDFLAGS = $(inherited) -l"iconv" -framework "AVFoundation" -framework "CoreGraphics" -framework "CoreMedia" -framework "CoreVideo" -framework "QuartzCore"
+PODS_BUILD_DIR = ${BUILD_DIR}
+PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_ROOT = ${SRCROOT}
+PODS_TARGET_SRCROOT = ${PODS_ROOT}/ZBarSDK
+PRODUCT_BUNDLE_IDENTIFIER = org.cocoapods.${PRODUCT_NAME:rfc1034identifier}
+SKIP_INSTALL = YES
